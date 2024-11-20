@@ -17,7 +17,6 @@ function ListClass() {
 }
 
 function CardClass({ classRoom }: { classRoom: number }) {
-  console.log(classRoom);
   return (
     <div className="flex h-52 max-h-52 flex-col gap-2 rounded-sm border shadow-sm">
       <div className="relative h-2/3 w-full overflow-hidden">
