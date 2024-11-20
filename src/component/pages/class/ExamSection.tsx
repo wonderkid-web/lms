@@ -20,7 +20,7 @@ export function ExamSection({ id }: { id: string }) {
       {questions.map((question) => (
         <div
           key={question.id}
-          className="mb-4 rounded-lg bg-white p-6 shadow-md"
+          className="mb-4 rounded-lg bg-white p-6 shadow-md border-2"
         >
           <h3 className="mb-2 text-xl font-semibold">Soal {question.id}</h3>
           <p className="mb-4">{question.text}</p>
