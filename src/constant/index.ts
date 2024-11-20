@@ -1,0 +1,62 @@
+export const questions = [
+  {
+    id: 1,
+    text: "Ibukota Indonesia?",
+    options: ["London", "Jakarta", "Paris", "Madrid"],
+  },
+  {
+    id: 2,
+    text: "Planet Merah di Tata Surya?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+  },
+  {
+    id: 3,
+    text: "Yang Ngelukis Mona Lisa?",
+    options: [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Michelangelo",
+    ],
+  },
+  {
+    id: 4,
+    text: "Hewan tercepat di darat?",
+    options: ["Cheetah", "Kuda", "Harimau", "Singa"],
+  },
+  {
+    id: 5,
+    text: "Ibukota Jepang?",
+    options: ["Tokyo", "Beijing", "Seoul", "Bangkok"],
+  },
+  {
+    id: 6,
+    text: "Siapa penemu lampu pijar?",
+    options: [
+      "Alexander Graham Bell",
+      "Thomas Alva Edison",
+      "Nikola Tesla",
+      "Benjamin Franklin",
+    ],
+  },
+  {
+    id: 7,
+    text: "Lambang kimia air?",
+    options: ["H2O", "O2", "CO2", "NaCl"],
+  },
+  {
+    id: 8,
+    text: "Gunung tertinggi di dunia?",
+    options: ["Kilimanjaro", "Everest", "Elbrus", "Denali"],
+  },
+  {
+    id: 9,
+    text: "Berapa jumlah sisi pada segitiga?",
+    options: ["3", "4", "5", "6"],
+  },
+  {
+    id: 10,
+    text: "Siapa presiden pertama Indonesia?",
+    options: ["Soekarno", "Soeharto", "Joko Widodo", "B.J. Habibie"],
+  },
+];
