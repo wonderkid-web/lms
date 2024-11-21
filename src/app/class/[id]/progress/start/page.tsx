@@ -2,7 +2,7 @@ import Container from "@/component/layout/Container";
 import Image from "next/image";
 import doodle from "@/../public/doodle.jpg";
 import Link from "next/link";
-import { PencilRuler, ArrowRight, ChevronLeft } from "lucide-react";
+import { PencilRuler, ChevronLeft } from "lucide-react";
 import StartButtonClass from "@/component/pages/class/StartButtonClass";
 
 type Props = {

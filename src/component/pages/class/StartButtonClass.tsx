@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, PencilRuler } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";

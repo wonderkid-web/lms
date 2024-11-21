@@ -124,13 +124,10 @@ export function MultipleExamSection({ id }: { id: string }) {
 
 export function EssayExamSection({ id }: { id: string }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<{
+  const [selectedAnswers] = useState<{
     [key: number]: string;
   }>({});
 
-  const handleAnswerChange = (questionId: number, answer: string) => {
-    setSelectedAnswers((prev) => ({ ...prev, [questionId]: answer }));
-  };
 
   const moveToNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
