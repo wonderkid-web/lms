@@ -17,7 +17,7 @@ export default async function Home({ params }: Props) {
       <header className="absolute left-0 right-0 top-0 z-20 p-4">
         <div className="mx-auto flex max-w-4xl items-center">
           <Link
-            href={`/class`}
+            href={`/class/${id}/progress`}
             className="group flex items-center text-gray-700 transition-colors hover:text-blue-600"
           >
             <ChevronLeft
