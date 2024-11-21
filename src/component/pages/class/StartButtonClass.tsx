@@ -1,6 +1,6 @@
 "use client";
 
-import { PencilRuler } from "lucide-react";
+import { ArrowRight, PencilRuler } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";
@@ -14,10 +14,13 @@ function StartButtonClass({ id }: Props) {
   return (
     <Link
       href={`/class/${id}/progress/start/${idProgress}`}
-      className="bg-background absolute bottom-1 left-0 flex w-full items-center justify-center py-8 text-xl font-semibold text-white md:text-2xl"
+      className="group flex w-full items-center justify-center rounded-lg bg-blue-600 py-4 text-white transition-all duration-300 hover:bg-blue-700"
     >
-      <h1>Siap Memulai Ujian?</h1>
-      <PencilRuler color="white" size={15} />
+      <span className="mr-2 text-lg font-semibold">Mulai Ujian</span>
+      <ArrowRight
+        className="transition-transform group-hover:translate-x-1"
+        size={24}
+      />
     </Link>
   );
 }

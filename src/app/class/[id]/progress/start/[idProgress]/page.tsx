@@ -1,6 +1,10 @@
 import Container from "@/component/layout/Container";
 import Header from "@/component/layout/Header";
-import { EssayExamSection, MultipleExamSection } from "@/component/pages/class/ExamSection";
+import {
+  EssayExamSection,
+  MultipleExamSection,
+} from "@/component/pages/class/ExamSection";
+
 import React from "react";
 
 type Props = {
