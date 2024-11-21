@@ -12,7 +12,8 @@ export default {
       colors: {
         primary: "#374151",
         background: "#1d4ed8",
-        backgroundHover: "#1e40af"
+        backgroundHover: "#1e40af",
+        backgroundSand: "#f6f6f6"
       },
     },
   },
