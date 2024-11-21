@@ -16,7 +16,7 @@ export default function Header({
 }: Props) {
   return (
     <section
-      className={`flex items-center justify-between gap-2 text-3xl font-semibold ${className}`}
+      className={`flex items-center justify-between gap-2 text-2xl font-semibold ${className}`}
       {...props}
     >
       {back && <BackButton />}

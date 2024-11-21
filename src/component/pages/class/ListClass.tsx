@@ -5,7 +5,7 @@ const CardClassMemo = memo(CardClass);
 
 export default function ListClass() {
   return (
-    <div className="grid grid-cols-2 gap-5 sm:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
       {[1, 2, 3, 4].map((i) => (
         <CardClassMemo classRoom={i} key={i} />
       ))}

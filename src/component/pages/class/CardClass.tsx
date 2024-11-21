@@ -9,8 +9,8 @@ type Props = {
 
 export default function CardClass({ classRoom }: Props) {
   return (
-    <div className="flex h-52 max-h-52 flex-col gap-2 rounded-sm border shadow-sm">
-      <div className="relative h-2/3 w-full overflow-hidden">
+    <div className="flex h-72 max-h-52 flex-col gap-2 rounded-md border shadow-sm">
+      <div className="relative h-1/2 w-full overflow-hidden">
         <Image src={doodle} alt="doodle" objectFit="cover" fill priority />
       </div>
 
@@ -25,13 +25,15 @@ export default function CardClass({ classRoom }: Props) {
         </div>
       </div>
 
-      <Link
-        className="flex items-center justify-center gap-1 rounded-sm bg-blue-600 py-1 text-center text-sm font-semibold text-white w-full"
-        href={`class/${classRoom}`}
-      >
-        Ujian
-        <LinkIcon size={10} />
-      </Link>
+      <div className="p-2">
+        <Link
+          className="flex items-center justify-center gap-2 rounded-md bg-blue-600 py-1 text-center text-sm font-semibold text-white w-full"
+          href={`class/${classRoom}`}
+        >
+          Ujian
+          <LinkIcon size={10} />
+        </Link>
+      </div>
     </div>
   );
 }
