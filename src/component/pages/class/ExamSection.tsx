@@ -5,7 +5,7 @@ import { Send } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-export function ExamSection({ id }: { id: string }) {
+export function MultipleExamSection({ id }: { id: string }) {
   const [selectedAnswers, setSelectedAnswers] = useState<{
     [key: number]: string;
   }>({});
@@ -16,11 +16,11 @@ export function ExamSection({ id }: { id: string }) {
 
   return (
     <div className="space-y-6 p-2">
-      <h2 className="text-2xl font-bold">Soal Ujian</h2>
+      <h2 className="text-2xl font-bold">Soal Ujian Ganda</h2>
       {questions.map((question) => (
         <div
           key={question.id}
-          className="mb-4 rounded-lg bg-white p-6 shadow-md border-2"
+          className="mb-4 rounded-lg border-2 bg-white p-6 shadow-md"
         >
           <h3 className="mb-2 text-xl font-semibold">Soal {question.id}</h3>
           <p className="mb-4">{question.text}</p>
@@ -44,8 +44,43 @@ export function ExamSection({ id }: { id: string }) {
           </div>
         </div>
       ))}
-      <Link href={`{/class/${id}/selesai`} className="w-full flex justify-center items-center text-lg text-white gap-2 bg-background py-2 rounded-md hover:bg-backgroundHover font-semibold">Kirim Jawaban
-      <Send color="white" size={12} />
+      <Link
+        href={`{/class/${id}/selesai`}
+        className="bg-background hover:bg-backgroundHover flex w-full items-center justify-center gap-2 rounded-md py-2 text-lg font-semibold text-white"
+      >
+        Kirim Jawaban
+        <Send color="white" size={12} />
+      </Link>
+    </div>
+  );
+}
+
+export function EssayExamSection({ id }: { id: string }) {
+
+  return (
+    <div className="space-y-6 p-2">
+      <h2 className="text-2xl font-bold">Soal Essay</h2>
+      {questions.map((question) => (
+        <div
+          key={question.id}
+          className="mb-4 rounded-lg border-2 bg-white p-6 shadow-md"
+        >
+          <h3 className="mb-2 text-xl font-semibold">Soal {question.id}</h3>
+          <p className="mb-4">{question.text}</p>
+          
+          <textarea
+            placeholder="Tulis Jawaban kamu disini"
+            className="flex h-40 max-h-40 w-full justify-start overflow-auto rounded-sm border p-2"
+          ></textarea>
+
+        </div>
+      ))}
+      <Link
+        href={`{/class/${id}/selesai`}
+        className="bg-background hover:bg-backgroundHover flex w-full items-center justify-center gap-2 rounded-md py-2 text-lg font-semibold text-white"
+      >
+        Kirim Jawaban
+        <Send color="white" size={12} />
       </Link>
     </div>
   );

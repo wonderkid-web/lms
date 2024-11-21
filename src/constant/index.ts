@@ -60,3 +60,57 @@ export const questions = [
     options: ["Soekarno", "Soeharto", "Joko Widodo", "B.J. Habibie"],
   },
 ];
+
+
+export const classes = [
+  {
+    title: "Pengantar Web Developer",
+    description: "Materi React.Js",
+    classRoom: 1
+  },
+  {
+    title: "Dasar Pemrograman JavaScript",
+    description: "Materi Pemula",
+    classRoom: 2
+  },
+  {
+    title: "Pengembangan Frontend dengan Next.js",
+    description: "Materi Intermediate",
+    classRoom: 3
+  },
+  {
+    title: "Backend dengan Node.js",
+    description: "Materi Fullstack",
+    classRoom: 4
+  },
+  {
+    title: "Membangun REST API",
+    description: "Materi Lanjutan",
+    classRoom: 5
+  },
+  {
+    title: "Pemrograman Berorientasi Objek",
+    description: "Materi Java dan Python",
+    classRoom: 6
+  },
+  {
+    title: "Pengelolaan Database dengan MySQL",
+    description: "Materi Backend",
+    classRoom: 7
+  },
+  {
+    title: "Dasar-Dasar Docker",
+    description: "Materi DevOps",
+    classRoom: 8
+  },
+  {
+    title: "Deploy Aplikasi dengan Vercel",
+    description: "Materi Deployment",
+    classRoom: 9
+  },
+  {
+    title: "Pengantar Testing dengan Jest",
+    description: "Materi QA",
+    classRoom: 10
+  },
+];
