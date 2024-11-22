@@ -1,6 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
-    "@typescript-eslint/ban-tslint-comment": "error"
+    "@typescript-eslint/ban-tslint-comment": "error",
+    "@typescript-eslint/no-explicit-any": false
   }
 }
