@@ -1,6 +1,6 @@
-import Container from "@/component/layout/Container";
-import Header from "@/component/layout/Header";
-import ListClass from "@/component/pages/class/ListClass";
+import Container from "@/components/layout/Container";
+import Header from "@/components/layout/Header";
+import ListClass from "@/components/pages/class/ListClass";
 
 export default function Home() {
   return (

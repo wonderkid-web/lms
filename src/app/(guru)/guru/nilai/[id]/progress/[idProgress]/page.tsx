@@ -1,10 +1,10 @@
 import Container from "@/components/layout/Container";
 import Header from "@/components/layout/Header";
 import {
-  EssayExamSection,
   MultipleExamSection,
 } from "@/components/pages/class/ExamSection";
 import MozaicInput from "@/components/pages/class/MozaicInput";
+import InputPointGuru from "@/components/pages/guru/InputPointGuru";
 
 import React from "react";
 
@@ -17,13 +17,14 @@ async function page({ params }: Props) {
   return (
     <Container>
       <Header text={`Progress ${idProgress}`} />
-      
 
       <MozaicInput />
 
       {/* {Number(idProgress) % 3 != 0 && <EssayExamSection id={idProgress} />} */}
 
       {Number(idProgress) % 3 == 0 && <MultipleExamSection id={idProgress} />}
+
+      <InputPointGuru />
     </Container>
   );
 }

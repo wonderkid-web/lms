@@ -1,4 +1,4 @@
-import Container from "@/component/layout/Container";
+import Container from "@/components/layout/Container";
 import Image from "next/image";
 import logo from "@/../public/logo.png";
 import Link from "next/link";

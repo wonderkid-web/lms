@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import Container from "@/component/layout/Container";
+import Container from "@/components/layout/Container";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";

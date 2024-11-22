@@ -1,6 +1,6 @@
-import Container from '@/component/layout/Container'
-import Header from '@/component/layout/Header'
-import { EssayExamSection } from '@/component/pages/class/ExamSection'
+import Container from '@/components/layout/Container'
+import Header from '@/components/layout/Header'
+import { EssayExamSection } from '@/components/pages/class/ExamSection'
 import React from 'react'
 
 function page() {

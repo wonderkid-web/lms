@@ -1,6 +1,6 @@
 import { memo } from "react";
 import CardClass from "./CardClass";
-import { classes } from "@/constant";
+import { classes } from "@/static";
 
 const CardClassMemo = memo(CardClass);
 

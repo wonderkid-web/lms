@@ -53,7 +53,7 @@ async function ProgressClassPage({ params }: Props) {
               <Link
                 key={module.number}
                 href={{
-                  pathname: `/class/${id}/progress/start`,
+                  pathname: `progress/${module.number}`,
                   query: { idProgress: module.number },
                 }}
                 className="bg-white border border-gray-200 rounded-xl p-5 

@@ -1,9 +1,9 @@
-import Container from "@/component/layout/Container";
+import Container from "@/components/layout/Container";
 import Image from "next/image";
 import doodle from "@/../public/doodle.jpg";
 import Link from "next/link";
 import { PencilRuler, ChevronLeft } from "lucide-react";
-import StartButtonClass from "@/component/pages/class/StartButtonClass";
+import StartButtonClass from "@/components/pages/class/StartButtonClass";
 
 type Props = {
   params: Promise<{ id: string }>;

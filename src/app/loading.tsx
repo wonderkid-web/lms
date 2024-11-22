@@ -1,5 +1,5 @@
-import Container from "@/component/layout/Container";
-import Header from "@/component/layout/Header";
+import Container from "@/components/layout/Container";
+import Header from "@/components/layout/Header";
 
 export default function loading() {
   return (

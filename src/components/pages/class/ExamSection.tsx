@@ -1,6 +1,6 @@
 "use client";
 
-import { questions } from "@/constant";
+import { questions } from "@/static";
 import {
   Send,
   ArrowRight,
