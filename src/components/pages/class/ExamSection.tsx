@@ -38,7 +38,7 @@ export function MultipleExamSection({ id }: { id: string }) {
     questions.length === Object.keys(selectedAnswers).length;
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <div className="w-full p-1">
         {/* Progress Indicator */}
         <div className="mb-6 flex items-center justify-between">

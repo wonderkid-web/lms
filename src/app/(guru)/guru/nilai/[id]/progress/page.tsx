@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Link from "next/link";
 import { BookOpen, FileText, Target, Zap, Layers, Award, Rocket, Brain } from "lucide-react";
 import React from "react";
+import { moduleData } from "@/static";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -23,16 +24,6 @@ async function ProgressClassPage({ params }: Props) {
   const { id } = await params;
 
   // Simulasi data modul
-  const moduleData = [
-    { number: 1, title: "Pengenalan Dasar" },
-    { number: 2, title: "Konsep Fundamental" },
-    { number: 3, title: "Strategi Lanjutan" },
-    { number: 4, title: "Praktik Terapan" },
-    { number: 5, title: "Studi Kasus" },
-    { number: 6, title: "Proyek Akhir" },
-    { number: 7, title: "Pengembangan Profesional" },
-    { number: 8, title: "Refleksi dan Evaluasi" },
-  ];
 
   return (
     <Container className="h-full">

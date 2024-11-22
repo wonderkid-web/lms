@@ -18,11 +18,9 @@ async function page({ params }: Props) {
     <Container>
       <Header text={`Progress ${idProgress}`} />
 
-      <MozaicInput />
-
-      {/* {Number(idProgress) % 3 != 0 && <EssayExamSection id={idProgress} />} */}
-
       {Number(idProgress) % 3 == 0 && <MultipleExamSection id={idProgress} />}
+
+      <MozaicInput />
 
       <InputPointGuru />
     </Container>
