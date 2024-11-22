@@ -1,3 +1,5 @@
+import { Book, Users, Calendar, Clock } from "lucide-react";
+
 export const questions = [
   {
     id: 1,
@@ -113,4 +115,46 @@ export const classes = [
     description: "Materi QA",
     classRoom: 10
   },
+];
+
+export const initialStudents = [
+  {
+    id: 1,
+    name: "Ahmad Santoso",
+    progress: 75,
+    subject: "Matematika",
+    lastActivity: "2 jam yang lalu",
+    status: "active"
+  },
+  {
+    id: 2,
+    name: "Siti Rahmah",
+    progress: 92,
+    subject: "Fisika",
+    lastActivity: "1 hari yang lalu",
+    status: "active"
+  },
+  {
+    id: 3,
+    name: "Budi Prakoso",
+    progress: 45,
+    subject: "Kimia",
+    lastActivity: "3 jam yang lalu",
+    status: "warning"
+  },
+  {
+    id: 4,
+    name: "Diana Putri",
+    progress: 88,
+    subject: "Biologi",
+    lastActivity: "5 jam yang lalu",
+    status: "active"
+  },
+];
+
+export const stats = [
+  { label: "Total Mata Kuliah", value: "12", icon: Book },
+  { label: "Total Siswa", value: "156", icon: Users },
+  { label: "Menuju Semester Baru", value: "3 Bulan", icon: Calendar },
+  { label: "Rata-rata Kehadiran", value: "89%", icon: Clock },
 ];

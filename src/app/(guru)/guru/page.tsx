@@ -1,61 +1,11 @@
 "use client";
+
 import React, { useState } from "react";
 import Container from "@/component/layout/Container";
 import Header from "@/component/layout/Header";
-import { Book, Users, Calendar, Clock, ChevronRight, Search } from "lucide-react";
-
-// Sample data - normally would come from API/database
-const stats = [
-  { label: "Total Mata Kuliah", value: "12", icon: Book },
-  { label: "Total Siswa", value: "156", icon: Users },
-  { label: "Menuju Semester Baru", value: "3 Bulan", icon: Calendar },
-  { label: "Rata-rata Kehadiran", value: "89%", icon: Clock },
-];
-
-const initialStudents = [
-  {
-    id: 1,
-    name: "Ahmad Santoso",
-    progress: 75,
-    subject: "Matematika",
-    lastActivity: "2 jam yang lalu",
-    status: "active"
-  },
-  {
-    id: 2,
-    name: "Siti Rahmah",
-    progress: 92,
-    subject: "Fisika",
-    lastActivity: "1 hari yang lalu",
-    status: "active"
-  },
-  {
-    id: 3,
-    name: "Budi Prakoso",
-    progress: 45,
-    subject: "Kimia",
-    lastActivity: "3 jam yang lalu",
-    status: "warning"
-  },
-  {
-    id: 4,
-    name: "Diana Putri",
-    progress: 88,
-    subject: "Biologi",
-    lastActivity: "5 jam yang lalu",
-    status: "active"
-  },
-];
-
-const getProgressColor = (progress: number) => {
-  if (progress >= 80) return "bg-green-500";
-  if (progress >= 60) return "bg-yellow-500";
-  return "bg-red-500";
-};
-
-const getStatusColor = (status: string) => {
-  return status === "active" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800";
-};
+import { ChevronRight, Search } from "lucide-react";
+import { initialStudents, stats } from "@/constant";
+import { getProgressColor, getStatusColor } from "@/helper";
 
 export default function Page() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -82,7 +32,7 @@ export default function Page() {
       <Header text="Selamat Datang Guru" />
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-8">
         {stats.map((stat, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
             <div className="flex items-center justify-between">
@@ -120,7 +70,6 @@ export default function Page() {
               <tr className="border-b border-gray-200">
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Nama Siswa</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Progress</th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Mata Kuliah</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Status</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Aktivitas Terakhir</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500"></th>
@@ -153,10 +102,9 @@ export default function Page() {
                         </div>
                       </div>
                     </td>
-                    <td className="py-3 px-4 text-gray-500">{student.subject}</td>
                     <td className="py-3 px-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(student.status)}`}>
-                        {student.status === 'active' ? 'Aktif' : 'Perlu Perhatian'}
+                        {student.status === 'active' ? 'Aktif' : 'Jarang'}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-gray-500">{student.lastActivity}</td>
