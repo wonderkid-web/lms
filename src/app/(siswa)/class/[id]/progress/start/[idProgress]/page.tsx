@@ -4,6 +4,7 @@ import {
   EssayExamSection,
   MultipleExamSection,
 } from "@/component/pages/class/ExamSection";
+import MozaicInput from "@/component/pages/class/MozaicInput";
 
 import React from "react";
 
@@ -16,8 +17,11 @@ async function page({ params }: Props) {
   return (
     <Container>
       <Header text={`Progress ${idProgress}`} />
+      
 
-      {Number(idProgress) % 3 != 0 && <EssayExamSection id={idProgress} />}
+      <MozaicInput />
+
+      {/* {Number(idProgress) % 3 != 0 && <EssayExamSection id={idProgress} />} */}
 
       {Number(idProgress) % 3 == 0 && <MultipleExamSection id={idProgress} />}
     </Container>

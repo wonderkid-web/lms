@@ -1,7 +1,13 @@
 "use client";
 
 import { questions } from "@/constant";
-import { Send, ArrowRight, ArrowLeft, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  Send,
+  ArrowRight,
+  ArrowLeft,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -43,12 +49,13 @@ export function MultipleExamSection({ id }: { id: string }) {
             {questions.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 w-2 rounded-full ${index < currentQuestionIndex
-                  ? "bg-green-500"
-                  : index === currentQuestionIndex
-                    ? "bg-blue-500"
-                    : "bg-gray-300"
-                  }`}
+                className={`h-2 w-2 rounded-full ${
+                  index < currentQuestionIndex
+                    ? "bg-green-500"
+                    : index === currentQuestionIndex
+                      ? "bg-blue-500"
+                      : "bg-gray-300"
+                }`}
               />
             ))}
           </div>
@@ -65,10 +72,11 @@ export function MultipleExamSection({ id }: { id: string }) {
               <button
                 key={index}
                 onClick={() => handleAnswerChange(currentQuestion.id, option)}
-                className={`w-full rounded-lg border p-4 text-left transition-all duration-300 ${selectedAnswers[currentQuestion.id] === option
-                  ? "border-blue-500 bg-blue-50 text-blue-700"
-                  : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
-                  }`}
+                className={`w-full rounded-lg border p-4 text-left transition-all duration-300 ${
+                  selectedAnswers[currentQuestion.id] === option
+                    ? "border-blue-500 bg-blue-50 text-blue-700"
+                    : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+                }`}
               >
                 <div className="flex items-center justify-between">
                   <span>{option}</span>
@@ -96,24 +104,24 @@ export function MultipleExamSection({ id }: { id: string }) {
           {/* Next/Submit Button */}
           {currentQuestionIndex < questions.length - 1
             ? // Next button for non-last questions
-            selectedAnswers[currentQuestion.id] && (
-              <button
-                onClick={moveToNextQuestion}
-                className="ml-auto flex items-center rounded-lg bg-blue-500 px-6 py-3 text-white transition-colors hover:bg-blue-600"
-              >
-                <ArrowRight size={20} />
-              </button>
-            )
+              selectedAnswers[currentQuestion.id] && (
+                <button
+                  onClick={moveToNextQuestion}
+                  className="ml-auto flex items-center rounded-lg bg-blue-500 px-6 py-3 text-white transition-colors hover:bg-blue-600"
+                >
+                  <ArrowRight size={20} />
+                </button>
+              )
             : // Submit button only on last question when all answered
-            isAllQuestionsAnswered && (
-              <Link
-                href={`/class/${id}/selesai`}
-                className="ml-auto flex items-center rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700"
-              >
-                <span className="mr-2">Kirim Jawaban</span>
-                <Send size={20} />
-              </Link>
-            )}
+              isAllQuestionsAnswered && (
+                <Link
+                  href={`/class/${id}/selesai`}
+                  className="ml-auto flex items-center rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700"
+                >
+                  <span className="mr-2">Kirim Jawaban</span>
+                  <Send size={20} />
+                </Link>
+              )}
         </div>
       </div>
     </div>
@@ -166,7 +174,7 @@ export function EssayExamSection({ id }: { id: string }) {
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${minutes.toString().padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   // Hitung persentase jawaban yang telah diisi
@@ -191,18 +199,20 @@ export function EssayExamSection({ id }: { id: string }) {
     questions.length === Object.keys(selectedAnswers).length;
 
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Timer dan Progress */}
-      <div className="sticky top-0 z-20 bg-white shadow rounded-md mt-2">
-        <div className="container mx-auto flex justify-between items-center p-4">
+      {/* <div className="sticky top-0 z-20 mt-2 rounded-md bg-white shadow">
+        <div className="container mx-auto flex items-center justify-between p-4">
           <div className="flex items-center space-x-4">
-            <div className={`text font-bold ${remainingTime <= 600 ? 'text-red-500' : 'text-blue-600'}`}>
+            <div
+              className={`text font-bold ${remainingTime <= 600 ? "text-red-500" : "text-blue-600"}`}
+            >
               ⏱️ {formatTime(remainingTime)}
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-32 bg-gray-200 rounded-full h-2.5">
+              <div className="h-2.5 w-32 rounded-full bg-gray-200">
                 <div
-                  className="bg-blue-600 h-2.5 rounded-full"
+                  className="h-2.5 rounded-full bg-blue-600"
                   style={{ width: `${calculateCompletionPercentage()}%` }}
                 />
               </div>
@@ -215,29 +225,35 @@ export function EssayExamSection({ id }: { id: string }) {
             {currentQuestionIndex + 1}/{questions.length}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Konten Utama */}
       <div className="container mx-auto mt-8">
         {/* Question */}
         <div className="">
           <h2 className="mb-4 text-2xl font-bold text-gray-800">
-            {currentQuestion.text}
+            {/* {currentQuestion.text} */}
+            Masukan Soal kamu disini 👇
           </h2>
 
           <div className="space-y-4">
             <textarea
               placeholder="Tulis Jawaban kamu disini"
-              value={selectedAnswers[currentQuestion.id] || ''}
-              onChange={(e) => handleAnswerChange(currentQuestion.id, e.target.value)}
-              className="flex h-40 max-h-60 w-full justify-start overflow-auto rounded-lg border p-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              value={selectedAnswers[currentQuestion.id] || ""}
+              onChange={(e) =>
+                handleAnswerChange(currentQuestion.id, e.target.value)
+              }
+              className="flex h-40 max-h-60 w-full justify-start overflow-auto rounded-lg border p-4 focus:border-transparent focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Indikator Panjang Jawaban */}
-            <div className="text-sm text-gray-600 flex justify-between">
-              <span>Panjang Jawaban: {(selectedAnswers[currentQuestion.id] || '').length} karakter</span>
-              {(selectedAnswers[currentQuestion.id] || '').length < 3 && (
-                <span className="text-yellow-600 flex items-center">
+            <div className="flex justify-between text-sm text-gray-600">
+              {/* <span>
+                Panjang Jawaban:{" "}
+                {(selectedAnswers[currentQuestion.id] || "").length} karakter
+              </span> */}
+              {(selectedAnswers[currentQuestion.id] || "").length < 3 && (
+                <span className="flex items-center text-yellow-600">
                   <AlertCircle size={16} className="mr-1" />
                   Jawaban terlalu pendek
                 </span>
@@ -260,48 +276,51 @@ export function EssayExamSection({ id }: { id: string }) {
 
           {/* Next/Submit Button */}
           <div className="ml-auto flex space-x-4">
-            {currentQuestionIndex < questions.length - 1 ? (
-              // Next button for non-last questions
-              selectedAnswers[currentQuestion.id] && (
-                <button
-                  onClick={moveToNextQuestion}
-                  className="flex items-center rounded-lg bg-blue-500 px-6 py-3 text-white transition-colors hover:bg-blue-600"
-                >
-                  Selanjutnya <ArrowRight size={20} className="ml-2" />
-                </button>
-              )
-            ) : (
-              // Submit button only on last question when all answered
-              isAllQuestionsAnswered && (
-                <button
-                  onClick={handleSubmitConfirmation}
-                  className="ml-auto flex items-center rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700"
-                >
-                  <span className="mr-2">Kirim Jawaban</span>
-                  <Send size={20} />
-                </button>
-              )
-            )}
+            {currentQuestionIndex < questions.length - 1
+              ? // Next button for non-last questions
+                selectedAnswers[currentQuestion.id] && (
+                  <button
+                    onClick={moveToNextQuestion}
+                    className="flex items-center rounded-lg bg-blue-500 px-6 py-3 text-white transition-colors hover:bg-blue-600"
+                  >
+                    Selanjutnya <ArrowRight size={20} className="ml-2" />
+                  </button>
+                )
+              : // Submit button only on last question when all answered
+                isAllQuestionsAnswered && (
+                  <button
+                    onClick={handleSubmitConfirmation}
+                    className="ml-auto flex items-center rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700"
+                  >
+                    <span className="mr-2">Kirim Jawaban</span>
+                    <Send size={20} />
+                  </button>
+                )}
           </div>
         </div>
       </div>
 
       {/* Konfirmasi Modal */}
       {isConfirmModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-2">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full">
-            <h2 className="text-2xl font-bold mb-4 text-center">Konfirmasi Pengiriman</h2>
-            <p className="text-center mb-6">Apakah Anda yakin ingin mengirim jawaban? Anda tidak dapat mengubah jawaban setelah dikirim.</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-2">
+          <div className="w-full max-w-md rounded-lg bg-white p-8">
+            <h2 className="mb-4 text-center text-2xl font-bold">
+              Konfirmasi Pengiriman
+            </h2>
+            <p className="mb-6 text-center">
+              Apakah Anda yakin ingin mengirim jawaban? Anda tidak dapat
+              mengubah jawaban setelah dikirim.
+            </p>
             <div className="flex justify-center space-x-4">
               <button
                 onClick={() => setIsConfirmModalOpen(false)}
-                className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+                className="rounded-lg bg-gray-200 px-6 py-3 text-gray-800 hover:bg-gray-300"
               >
                 Batalkan
               </button>
               <Link
                 href={`/class/${id}/selesai`}
-                className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center"
+                className="flex items-center rounded-lg bg-green-600 px-6 py-3 text-white hover:bg-green-700"
               >
                 Ya, Kirim <Send size={20} className="ml-2" />
               </Link>
