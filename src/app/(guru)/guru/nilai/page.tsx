@@ -42,13 +42,13 @@ function page() {
       {/* Students List Section */}
       <div className="relative">
         <div className="mb-6 flex items-center justify-between relative flex-wrap gap-3">
-          <div className="relative">
+          <div className="relative w-full">
             <input
               type="text"
               value={searchQuery}
               onChange={handleSearch}
               placeholder="Cari nama siswa atau mata kuliah..."
-              className="w-64 rounded-lg border py-2 pl-10 pr-4 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-lg border py-2 pl-10 pr-4 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
             />
             <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
           </div>
